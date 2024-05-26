@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/trip.js" type="module"></script>
+    <title>Trips</title>
+</head>
+
+<body>
+    <div class="container my-5">
+        <a href="index.html" class="btn btn-outline-dark">
+            <i class="fa fa-arrow-left me-2"></i>
+            Back
+        </a>
+        <h1 class="text-center" id="page-title"></h1>
+        <h3 class="text-muted text-center" id="participants-list"></h3>
+        <ul class="nav nav-pills nav-fill gap-2">
+            <li class="nav-item border border-secondary-subtle">
+                <button class="nav-link active" data-toggle="page-button" data-target="#expenses">Expenses</button>
+            </li>
+            <li class="nav-item border border-secondary-subtle">
+                <button class="nav-link" data-toggle="page-button" data-target="#balance">Balance</button>
+            </li>
+        </ul>
+
+        <div class="page" id="expenses">
+            <div class="d-flex justify-content-between w-100">
+                <p class="fw-bold">Total: <span class="fw-normal" id="total-expenses"></span></p>
+                <a href="" class="link-dark">Create new expenses</a>
+            </div>
+        </div>
+        <div class="page show" id="balance">
+            <div class="d-flex w-100">
+                <div class="w-50 d-flex flex-column row-gap-2" id="negative">
+                </div>
+                <div class="w-50 df-flex flex-column row-gap-2" id="positive">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <template id="graphRow">
+        <div class="position-relative">
+            <div class="position-absolute top-0 z-0" id="background-bar"></div>
+            <span class="py-2 z-2 position-relative" id="name"></span>
+        </div>
+    </template>
+
+    <div id="expensises-container" class="d-flex flex-column row-gap-2"></div>
+
+    </div>
+</body>
+
+</html>
